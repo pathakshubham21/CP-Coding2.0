@@ -1,10 +1,13 @@
 #include<iostream>
 using namespace std;
-void solve(string str, string output)
+void solve(string &str, string &output, int &result)
 {
     if(str.length()==0)
     {
-        cout<<output<<endl;
+        if(output.length()==1 && output[0]!= '0')
+        result++;
+        if(output.length()==2 && output<="26")
+        result++;
         return;
     }
 
@@ -13,14 +16,16 @@ void solve(string str, string output)
     
     output2.push_back(str[0]);
     str.erase(str.begin()+0);
-    solve(str, output1);
-    solve(str, output2);
+    solve(str, output1,result);
+    solve(str, output2, result);
 }
 int main()
 {
-    string str = "ab"
+    string str = "ab";
     string output = "";
-    solve(str, output);
+    int result =0;
+    solve(str, output, result );
+    cout << result << endl;
     return 0;
 
 }
