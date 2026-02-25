@@ -1,3 +1,17 @@
+/*
+Quick Sort – Approach (Revision Notes)
+
+1. Choose first element as pivot.
+2. Count elements smaller than pivot to find its correct position (PI).
+3. Swap pivot to its correct position.
+4. Use two pointers (i from start, j from end):
+   - If left side element < pivot → move i forward
+   - If right side element > pivot → move j backward
+   - Else swap arr[i] and arr[j]
+5. Recursively sort left and right subarrays.
+6. Base condition: if start >= end → return.
+*/
+
 #include<iostream>
 using namespace std;
 
